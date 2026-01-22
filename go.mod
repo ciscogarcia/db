@@ -1,4 +1,4 @@
-module ciscogarcia/db
+module github.com/ciscogarcia/db
 
 go 1.25.6
 
