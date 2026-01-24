@@ -33,7 +33,15 @@ func GetDB() *pgxpool.Pool {
 
 func InitDB() *pgxpool.Pool {
 	// Get Credentials from config
-	file, err := os.Open("config.json")
+	file_path, err := os.Getwd()
+	if err != nil {
+		// log error
+	}
+	file_path += "/config.json"
+
+	// TODO: stat file
+	// use alternate paths if stat fails
+	file, err := os.Open(file_path)
 	if err != nil {
 		// log error
 	}
